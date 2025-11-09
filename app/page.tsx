@@ -14,6 +14,12 @@ export default function Home(): JSX.Element | null {
     const maxAllowedScreenWidth = 768;
     const finalStep: number = stepsInfo.length - 2;
     const currentStep: StepItem | undefined = stepsInfo.find((s) => s.index === stepIndex);
+    const [answers, setAnswers] = useState<Record<number, number>>({});
+
+    const handleAnswer = (value: number) => {
+        setAnswers((prev) => ({ ...prev, [stepIndex]: value }));
+        setStepIndex(stepIndex + 1);
+    };
 
     useEffect((): (() => void) => {
         function handleResize(): void {
@@ -55,7 +61,8 @@ export default function Home(): JSX.Element | null {
             {stepIndex > 0 && stepIndex <= finalStep && (
                 <Quiz
                     stepInfo={currentStep}
-                    onNext={() => setStepIndex(stepIndex + 1)}
+                    selectedValue={answers[stepIndex] ?? null}
+                    onNext={handleAnswer}
                 />
             )}
 

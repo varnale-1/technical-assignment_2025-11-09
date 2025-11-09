@@ -12,6 +12,7 @@
     --color-foreground: var(--foreground);
     --color-yellow: #FFC633;
     --color-purple: #6A61F1;
+    --color-purple-light: #767AF9;
     --font-figtree: "Figtree", sans-serif;
     --font-poppins: "Poppins", "sans-serif";
     --text-lg: 24px;
@@ -19,7 +20,6 @@
     --text-sm: 12px;
     --container-max: 375px;
     --padding-side: var(--side-padding);
-    --rounded-md: 8px;
 }
 
 body {
@@ -27,7 +27,7 @@ body {
 }
 
 .wrapper {
-    @apply w-full flex flex-col h-[100dvh];
+    @apply w-full flex flex-col h-[100dvh] pb-[20px];
 }
 
 .wrapper > .container {
@@ -36,7 +36,7 @@ body {
 
 .container {
     @apply mx-auto px-side;
-    max-width: calc(var(--container-max) + (var(--side-padding) * 2));
+    max-width: var(--container-max);
 }
 
 h1 {

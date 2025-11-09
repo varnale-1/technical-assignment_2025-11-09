@@ -27,8 +27,8 @@ const Landing = ({onStart}: LandingProps): JSX.Element => {
                         <button
                             key={option.value}
                             onClick={() => onStart(option.value)}
-                            className={'border-purple rounded-md border-[2px] h-[200px] w-[162px] ' +
-                                'overflow-hidden flex flex-col mt-[24px]'}
+                            className={'border-purple rounded-[8px] border-[2px] h-[200px] w-[162px] ' +
+                                'overflow-hidden flex flex-col'}
                         >
                             <div className={'h-full w-full relative'}>
                                 <Image

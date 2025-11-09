@@ -9,12 +9,12 @@ interface IconProps {
     className?: string;
 }
 
-export default function Icon({
-                                 name,
-                                 color = "currentColor",
-                                 size = 24,
-                                 className = "",
-                             }: IconProps): JSX.Element | null {
+const Icon = ({
+                  name,
+                  color = "currentColor",
+                  size = 24,
+                  className = "",
+              }: IconProps): JSX.Element | null => {
     const [svgContent, setSvgContent] = useState<string>("");
 
     useEffect(() => {
@@ -39,3 +39,5 @@ export default function Icon({
         />
     );
 }
+
+export default Icon;

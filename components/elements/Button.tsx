@@ -2,6 +2,7 @@
 
 import React, {JSX} from "react";
 import Icon from "./Icon";
+import clsx from "clsx";
 
 interface IconProps {
     name: string;
@@ -15,25 +16,42 @@ interface ButtonProps {
     value?: string | number;
     icon?: IconProps;
     onClick?: () => void;
+    selected?: boolean;
 }
 
-export default function Button({ text, color = "#000", value, icon, onClick }: ButtonProps): JSX.Element {
+const Button = ({
+                          text,
+                          color,
+                          value,
+                          icon,
+                          onClick,
+                          selected
+}: ButtonProps): JSX.Element => {
     return (
         <button
-            style={{ color }}
             value={value}
             onClick={onClick}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-current"
+            style={{
+                backgroundColor: selected && color ? color : undefined,
+                borderColor: color ?? undefined,
+                color: selected ? "#fff" : undefined,
+            }}
+            className={clsx(
+                'inline-flex items-center gap-[12px] px-[12px] py-[16px] rounded-[8px] border leading-[20px]',
+                selected ? 'text-white bg-purple' : 'bg-white border-[#F1F1F1]',
+                color ? 'px-[20px]' : 'px-[12px]'
+            )}
         >
             {icon && (
                 <Icon
                     name={icon.name}
-                    color={icon.color ?? color}
-                    size={icon.size ?? 20}
+                    size={icon.size ?? 22}
+                    color={selected ? 'white' : color ?? 'inherit'}
                 />
             )}
-
-            {text}
+            <span className={'font-semibold'}>{text}</span>
         </button>
     );
 }
+
+export default Button;

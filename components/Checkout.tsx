@@ -1,9 +1,11 @@
 import {JSX} from "react";
 
-export default function Checkout(): JSX.Element {
+const Checkout = (): JSX.Element => {
     return (
         <div className={'container'}>
             Thank You
         </div>
     );
 }
+
+export default Checkout;

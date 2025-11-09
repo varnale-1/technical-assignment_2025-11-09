@@ -4,19 +4,30 @@ import {StepItem} from "@/data/steps";
 
 interface QuizProps {
     stepInfo: StepItem | undefined;
-    onNext: () => void;
+    selectedValue: number | null;
+    onNext: (value: number) => void;
 }
 
-export default function Quiz({stepInfo, onNext}: QuizProps): JSX.Element {
+const Quiz = ({stepInfo, selectedValue, onNext}: QuizProps): JSX.Element => {
     return (
-        <div className={'container mt-[12px]'}>
+        <div className={'container mt-[12px] h-full flex flex-col flex-1'}>
             <h1>{stepInfo?.title}</h1>
-            <Button
-                text="Continue"
-                color="#333"
-                icon={{name: "arrow", size: 20, color: "#333"}}
-                onClick={onNext}
-            />
+            <div className={'flex flex-col space-y-[8px] h-full justify-end'}>
+                {
+                    stepInfo?.options?.map(option => (
+                        <Button
+                            key={option.value}
+                            text={option.text}
+                            color={option.color}
+                            selected={selectedValue === option.value}
+                            icon={{name: option.icon, size: 20, color: "inherit"}}
+                            onClick={() => onNext(option.value)}
+                        />
+                    ))
+                }
+            </div>
         </div>
     );
 }
+
+export default Quiz;
