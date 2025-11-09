@@ -6,17 +6,13 @@ export interface StepOption {
 
 export interface StepItem {
     index: number;
-    title: string;
+    title?: string;
     subtitle?: string;
     options?: StepOption[];
 }
 
 export const stepsInfo: StepItem[] = [
-    {
-        index: 0,
-        title: "What is your gender?",
-        subtitle: "We will use this to personalize your plan",
-    },
+    {index: 0},
     {
         index: 1,
         title: "What is your main reason for wanting to quit drinking?",
@@ -77,8 +73,5 @@ export const stepsInfo: StepItem[] = [
             {icon: 'forbid', text: 'No', value: 30},
         ]
     },
-    {
-        index: 7,
-        title: 'Your personalized Alcohol-Free Plan is ready!',
-    },
+    {index: 7},
 ];

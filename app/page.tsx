@@ -9,10 +9,11 @@ import {StepItem, stepsInfo} from "@/data/steps";
 export default function Home(): JSX.Element | null {
     const [isMobile, setIsMobile] = useState<boolean | null>(null);
     const [stepIndex, setStepIndex] = useState<number>(0);
+    const [gender, setGender] = useState<number | null>(null);
 
     const maxAllowedScreenWidth = 768;
     const finalStep: number = stepsInfo.length - 2;
-    const currentStep: StepItem|undefined = stepsInfo.find((s) => s.index === stepIndex);
+    const currentStep: StepItem | undefined = stepsInfo.find((s) => s.index === stepIndex);
 
     useEffect((): (() => void) => {
         function handleResize(): void {
@@ -34,6 +35,11 @@ export default function Home(): JSX.Element | null {
         );
     }
 
+    const handleStart = (gender: number) => {
+        setStepIndex(stepIndex + 1);
+        setGender(gender);
+    }
+
     return (
         <div className={'wrapper'}>
             <Header
@@ -43,7 +49,7 @@ export default function Home(): JSX.Element | null {
             />
 
             {stepIndex === 0 && (
-                <Landing onStart={() => setStepIndex(stepIndex + 1)}/>
+                <Landing onStart={handleStart}/>
             )}
 
             {stepIndex > 0 && stepIndex <= finalStep && (

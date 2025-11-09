@@ -3,13 +3,13 @@ import {JSX} from "react";
 import {StepItem} from "@/data/steps";
 
 interface QuizProps {
-    stepInfo: StepItem|undefined;
+    stepInfo: StepItem | undefined;
     onNext: () => void;
 }
 
-export default function Quiz({ stepInfo, onNext }: QuizProps): JSX.Element {
+export default function Quiz({stepInfo, onNext}: QuizProps): JSX.Element {
     return (
-        <div className={'container'}>
+        <div className={'container mt-[12px]'}>
             <h1>{stepInfo?.title}</h1>
             <Button
                 text="Continue"

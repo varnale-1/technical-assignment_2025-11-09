@@ -2,7 +2,7 @@
 @import "./fonts.css";
 
 :root {
-    --background: #ffffff;
+    --background: #F9F6F4;
     --foreground: #303030;
     --side-padding: 20px;
 }
@@ -19,17 +19,26 @@
     --text-sm: 12px;
     --container-max: 375px;
     --padding-side: var(--side-padding);
+    --rounded-md: 8px;
 }
 
 body {
-    @apply font-figtree text-foreground;
+    @apply font-figtree text-foreground bg-background;
 }
 
 .wrapper {
-    @apply w-full;
+    @apply w-full flex flex-col h-[100dvh];
+}
+
+.wrapper > .container {
+    @apply h-full;
 }
 
 .container {
     @apply mx-auto px-side;
-    max-width: calc(var(--container-max) + var(--side-padding));
+    max-width: calc(var(--container-max) + (var(--side-padding) * 2));
+}
+
+h1 {
+    @apply font-semibold text-lg leading-[28px] text-center;
 }
