@@ -1,9 +1,13 @@
 "use client";
 import {useState, useEffect, JSX} from "react";
+import Landing from "@/components/Landing";
+import Quiz from "@/components/Quiz";
+import Checkout from "@/components/Checkout";
 
 export default function Home(): JSX.Element | null {
     const [isMobile, setIsMobile] = useState<boolean | null>(null);
     const maxAllowedScreenWidth = 768;
+    const [step, setStep] = useState<"landing" | "quiz" | "checkout">("landing");
 
     useEffect((): (() => void) => {
         function handleResize(): void {
@@ -25,9 +29,8 @@ export default function Home(): JSX.Element | null {
         );
     }
 
-    return (
-        <div className="container">
-            Initial Page
-        </div>
-    );
+    if (step === "landing") return <Landing onStart={() => setStep("quiz")}/>;
+    if (step === "quiz") return <Quiz onNext={() => setStep("checkout")}/>;
+
+    return <Checkout/>;
 }
