@@ -3,29 +3,33 @@
 
 :root {
     --background: #ffffff;
-    --foreground: #171717;
+    --foreground: #303030;
+    --side-padding: 20px;
 }
 
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
+    --color-yellow: #FFC633;
+    --color-purple: #6A61F1;
     --font-figtree: "Figtree", sans-serif;
+    --font-poppins: "Poppins", "sans-serif";
+    --text-lg: 24px;
+    --text-md: 18px;
+    --text-sm: 12px;
     --container-max: 375px;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #F9F6F4;
-        --foreground: #ededed;
-    }
+    --padding-side: var(--side-padding);
 }
 
 body {
-    @apply font-figtree;
+    @apply font-figtree text-foreground;
+}
+
+.wrapper {
+    @apply w-full;
 }
 
 .container {
-    max-width: var(--container-max);
-    margin-left: auto;
-    margin-right: auto;
+    @apply mx-auto px-side;
+    max-width: calc(var(--container-max) + var(--side-padding));
 }

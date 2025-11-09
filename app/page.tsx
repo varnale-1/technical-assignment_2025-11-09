@@ -4,12 +4,15 @@ import Landing from "@/components/Landing";
 import Quiz from "@/components/Quiz";
 import Checkout from "@/components/Checkout";
 import Header from "@/components/partials/Header";
+import {StepItem, stepsInfo} from "@/data/steps";
 
 export default function Home(): JSX.Element | null {
     const [isMobile, setIsMobile] = useState<boolean | null>(null);
+    const [stepIndex, setStepIndex] = useState<number>(0);
+
     const maxAllowedScreenWidth = 768;
-    const [step, setStep] = useState<number>(0);
-    const finalStep = 6;
+    const finalStep: number = stepsInfo.length - 2;
+    const currentStep: StepItem|undefined = stepsInfo.find((s) => s.index === stepIndex);
 
     useEffect((): (() => void) => {
         function handleResize(): void {
@@ -32,19 +35,26 @@ export default function Home(): JSX.Element | null {
     }
 
     return (
-        <div className={'container'}>
-            <Header currentStep={step} maxSteps={finalStep} onBack={() => setStep(step - 1)} />
+        <div className={'wrapper'}>
+            <Header
+                currentStep={stepIndex}
+                maxSteps={finalStep}
+                onBack={() => setStepIndex(Math.max(0, stepIndex - 1))}
+            />
 
-            {step === 0 && (
-                <Landing onStart={() => setStep(step + 1)} />
+            {stepIndex === 0 && (
+                <Landing onStart={() => setStepIndex(stepIndex + 1)}/>
             )}
 
-            {step < finalStep && (
-                <Quiz onNext={() => setStep(step + 1)} />
+            {stepIndex > 0 && stepIndex <= finalStep && (
+                <Quiz
+                    stepInfo={currentStep}
+                    onNext={() => setStepIndex(stepIndex + 1)}
+                />
             )}
 
-            {step === finalStep && (
-                <Checkout />
+            {stepIndex > finalStep && (
+                <Checkout/>
             )}
         </div>
     );

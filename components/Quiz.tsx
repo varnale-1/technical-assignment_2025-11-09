@@ -1,9 +1,16 @@
 import Button from "@/components/elements/Button";
 import {JSX} from "react";
+import {StepItem} from "@/data/steps";
 
-export default function Quiz({onNext}: { onNext: () => void }): JSX.Element {
+interface QuizProps {
+    stepInfo: StepItem|undefined;
+    onNext: () => void;
+}
+
+export default function Quiz({ stepInfo, onNext }: QuizProps): JSX.Element {
     return (
-        <div>
+        <div className={'container'}>
+            <h1>{stepInfo?.title}</h1>
             <Button
                 text="Continue"
                 color="#333"
