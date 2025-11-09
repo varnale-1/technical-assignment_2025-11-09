@@ -2,6 +2,7 @@ import React, {JSX, useEffect, useState} from "react";
 import Image from 'next/image'
 import Icon from "@/components/elements/Icon";
 import clsx from "clsx";
+import Progress from "@/components/elements/Progress";
 
 interface HeaderProps {
     currentStep: number;
@@ -16,9 +17,7 @@ const Header = ({
                 }: HeaderProps): JSX.Element => {
     const [timeLeft, setTimeLeft] = useState<number>(15 * 60);
     const showTimer = currentStep > maxSteps;
-
-    const showBackButton: boolean = currentStep > 0 && currentStep <= maxSteps;
-    const showStepCounter: boolean = currentStep > 0 && currentStep <= maxSteps;
+    const showQuiz: boolean = currentStep > 0 && currentStep <= maxSteps;
 
     useEffect(() => {
         if (!showTimer) return;
@@ -45,8 +44,8 @@ const Header = ({
                 currentStep > maxSteps ? 'justify-between flex-wrap' : 'justify-center'
             )}>
                 {
-                    showBackButton && (
-                        <button onClick={onBack} className={'w-[48px] min-w-[48px]'}>
+                    showQuiz && (
+                        <button onClick={onBack} className={'w-[48px] min-w-[48px] flex'}>
                             <Icon name="arrow" color="#303030" size={24}/>
                         </button>
                     )
@@ -58,9 +57,9 @@ const Header = ({
                     <Image src="/images/logo.svg" alt="Logo" width={62} height={36}/>
                 </div>
                 {
-                    showStepCounter &&
+                    showQuiz &&
                     (
-                        <div className={'whitespace-nowrap font-poppins w-[48px] min-w-[48px]'}>
+                        <div className={'whitespace-nowrap font-poppins w-[48px] min-w-[48px] flex justify-end'}>
                             <span className={'font-bold'}>{currentStep}</span>/{maxSteps}
                         </div>
                     )
@@ -74,6 +73,10 @@ const Header = ({
                     )
                 }
             </div>
+            {
+                showQuiz &&
+                <Progress maxStep={maxSteps} step={currentStep} />
+            }
         </div>
     )
 }
