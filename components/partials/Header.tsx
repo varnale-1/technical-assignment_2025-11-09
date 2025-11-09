@@ -15,7 +15,8 @@ const Header = ({
                     maxSteps,
                     onBack
                 }: HeaderProps): JSX.Element => {
-    const [timeLeft, setTimeLeft] = useState<number>(15 * 60);
+    const timeInterval = 15 * 60;
+    const [timeLeft, setTimeLeft] = useState<number>(timeInterval);
     const showTimer = currentStep > maxSteps;
     const showQuiz: boolean = currentStep > 0 && currentStep <= maxSteps;
 
@@ -23,11 +24,14 @@ const Header = ({
         if (!showTimer) return;
 
         const timer = setInterval(() => {
-            setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
+            setTimeLeft((prev) => {
+                if (prev <= 1) return timeInterval;
+                return prev - 1;
+            });
         }, 1000);
 
         return () => clearInterval(timer);
-    }, [showTimer]);
+    }, [showTimer, timeInterval]);
 
     const format = (seconds: number) =>
         `${Math.floor(seconds / 60)
