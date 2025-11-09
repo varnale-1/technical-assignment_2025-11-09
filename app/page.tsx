@@ -3,11 +3,13 @@ import {useState, useEffect, JSX} from "react";
 import Landing from "@/components/Landing";
 import Quiz from "@/components/Quiz";
 import Checkout from "@/components/Checkout";
+import Header from "@/components/partials/Header";
 
 export default function Home(): JSX.Element | null {
     const [isMobile, setIsMobile] = useState<boolean | null>(null);
     const maxAllowedScreenWidth = 768;
-    const [step, setStep] = useState<"landing" | "quiz" | "checkout">("landing");
+    const [step, setStep] = useState<number>(0);
+    const finalStep = 6;
 
     useEffect((): (() => void) => {
         function handleResize(): void {
@@ -29,8 +31,21 @@ export default function Home(): JSX.Element | null {
         );
     }
 
-    if (step === "landing") return <Landing onStart={() => setStep("quiz")}/>;
-    if (step === "quiz") return <Quiz onNext={() => setStep("checkout")}/>;
+    return (
+        <div className={'container'}>
+            <Header currentStep={step} maxSteps={finalStep} onBack={() => setStep(step - 1)} />
 
-    return <Checkout/>;
+            {step === 0 && (
+                <Landing onStart={() => setStep(step + 1)} />
+            )}
+
+            {step < finalStep && (
+                <Quiz onNext={() => setStep(step + 1)} />
+            )}
+
+            {step === finalStep && (
+                <Checkout />
+            )}
+        </div>
+    );
 }

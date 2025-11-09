@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, {JSX} from "react";
 import Icon from "./Icon";
 
 interface IconProps {
@@ -17,7 +17,7 @@ interface ButtonProps {
     onClick?: () => void;
 }
 
-export default function Button({ text, color = "#000", value, icon, onClick }: ButtonProps) {
+export default function Button({ text, color = "#000", value, icon, onClick }: ButtonProps): JSX.Element {
     return (
         <button
             style={{ color }}

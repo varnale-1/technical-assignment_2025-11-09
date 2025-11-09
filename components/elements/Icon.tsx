@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useState} from "react";
+import {JSX, useEffect, useState} from "react";
 
 interface IconProps {
     name: string;
@@ -14,7 +14,7 @@ export default function Icon({
                                  color = "currentColor",
                                  size = 24,
                                  className = "",
-                             }: IconProps) {
+                             }: IconProps): JSX.Element | null {
     const [svgContent, setSvgContent] = useState<string>("");
 
     useEffect(() => {
