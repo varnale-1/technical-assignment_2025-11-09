@@ -24,7 +24,7 @@ const Landing = ({onStart}: LandingProps): JSX.Element => {
             <div className={'mt-[12px] flex flex-col flex-1'}>
                 <h1>What is your gender?</h1>
                 <p className={'text-center mt-[12px] text-[14px] leading-[18px]'}>We will use this to personalize your plan</p>
-                <div className="flex justify-between items-center flex-1">
+                <div className="flex justify-between items-center flex-1 gap-[12px]">
                     {options.map((option) => (
                         <button
                             key={option.value}
