@@ -22,12 +22,12 @@ const Checkout = ({gender}: CheckoutProps): JSX.Element => {
                                      'last:border-r-0 pl-[20px] first:pl-0'}
                             >
                                 <div
-                                    className={'rounded-[4px] border bg-[#F4F4FF] border-purple-light p-[4px] flex items-center'}>
+                                    className={'rounded-[4px] border bg-[#F4F4FF] border-purple-light p-[3px] flex items-center'}>
                                     <Icon name={result.icon} color={'#5349DB'} size={24}/>
                                 </div>
                                 <div>
-                                    <p className={'text-[10px]'}>{result.title}</p>
-                                    <p className={'font-bold text-sm'}>{result.text}</p>
+                                    <p className={'text-[10px] leading-[12px]'}>{result.title}</p>
+                                    <p className={'font-bold text-sm leading-[14px]'}>{result.text}</p>
                                 </div>
                             </div>
                         ))
@@ -65,7 +65,7 @@ const Checkout = ({gender}: CheckoutProps): JSX.Element => {
 
             <div className="flex gap-[24px] flex-col">
                 <h2 className="!text-left !font-bold">
-                    Your personalized Alcohol-Free Plan is ready!
+                    Your Personal Summary
                 </h2>
                 <div className="flex flex-col gap-[8px]">
                     {summaryItems.map((summary) => (

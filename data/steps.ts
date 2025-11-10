@@ -3,6 +3,7 @@ export interface StepOption {
     text: string;
     value: number;
     color?: string;
+    icon_size?: number;
 }
 
 export interface StepItem {
@@ -42,36 +43,36 @@ export const stepsInfo: StepItem[] = [
         index: 3,
         title: 'Do you ever drink to feel "normal" or fit in with others?',
         options: [
-            {icon: 'check', text: 'Yes', value: 10, color: '#289F67'},
-            {icon: 'question', text: 'I’m not sure', value: 20, color: '#FFC633'},
-            {icon: 'forbid', text: 'No', value: 30, color: '#E35244'},
+            {icon: 'check', text: 'Yes', value: 10, color: '#289F67', icon_size: 16},
+            {icon: 'question', text: 'I’m not sure', value: 20, color: '#FFC633', icon_size: 16},
+            {icon: 'forbid', text: 'No', value: 30, color: '#E35244', icon_size: 16},
         ]
     },
     {
         index: 4,
         title: 'Do you sometimes feel like you\'re missing out if you don\'t participate in group activities or social events?',
         options: [
-            {icon: 'check', text: 'Yes', value: 10, color: '#289F67'},
-            {icon: 'question', text: 'I’m not sure', value: 20, color: '#FFC633'},
-            {icon: 'forbid', text: 'No', value: 30, color: '#E35244'},
+            {icon: 'check', text: 'Yes', value: 10, color: '#289F67', icon_size: 16},
+            {icon: 'question', text: 'I’m not sure', value: 20, color: '#FFC633', icon_size: 16},
+            {icon: 'forbid', text: 'No', value: 30, color: '#E35244', icon_size: 16},
         ]
     },
     {
         index: 5,
         title: 'Do you often find yourself wanting to escape from your daily responsibilities or pressures?',
         options: [
-            {icon: 'check', text: 'Yes', value: 10, color: '#289F67'},
-            {icon: 'question', text: 'I’m not sure', value: 20, color: '#FFC633'},
-            {icon: 'forbid', text: 'No', value: 30, color: '#E35244'},
+            {icon: 'check', text: 'Yes', value: 10, color: '#289F67', icon_size: 16},
+            {icon: 'question', text: 'I’m not sure', value: 20, color: '#FFC633', icon_size: 16},
+            {icon: 'forbid', text: 'No', value: 30, color: '#E35244', icon_size: 16},
         ]
     },
     {
         index: 6,
         title: 'Do you often seek ways to relax or unwind after a long, stressful day?',
         options: [
-            {icon: 'check', text: 'Yes', value: 10, color: '#289F67'},
-            {icon: 'question', text: 'I’m not sure', value: 20, color: '#FFC633'},
-            {icon: 'forbid', text: 'No', value: 30, color: '#E35244'},
+            {icon: 'check', text: 'Yes', value: 10, color: '#289F67', icon_size: 16},
+            {icon: 'question', text: 'I’m not sure', value: 20, color: '#FFC633', icon_size: 16},
+            {icon: 'forbid', text: 'No', value: 30, color: '#E35244', icon_size: 16},
         ]
     },
     {index: 7},

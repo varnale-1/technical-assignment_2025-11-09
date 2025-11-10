@@ -37,7 +37,7 @@ const Button = ({
                 color: selected ? "#fff" : undefined,
             }}
             className={clsx(
-                'inline-flex items-center gap-[12px] px-[12px] py-[16px] rounded-[8px] border leading-[20px]',
+                'inline-flex items-center gap-[12px] px-[11px] py-[15px] rounded-[8px] border',
                 selected ? 'text-white bg-purple' : 'bg-white border-[#F1F1F1]',
                 color ? 'px-[20px]' : 'px-[12px]'
             )}
@@ -49,7 +49,7 @@ const Button = ({
                     color={selected ? 'white' : color ?? 'inherit'}
                 />
             )}
-            <span className={'font-semibold'}>{text}</span>
+            <span className={'font-semibold leading-[20px]'}>{text}</span>
         </button>
     );
 }

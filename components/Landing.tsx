@@ -21,13 +21,13 @@ const Landing = ({onStart}: LandingProps): JSX.Element => {
         <div className={'container h-full flex flex-col'}>
             <div className={'mt-[12px] flex flex-col flex-1'}>
                 <h1>What is your gender?</h1>
-                <p className={'text-center mt-[12px]'}>We will use this to personalize your plan</p>
+                <p className={'text-center mt-[12px] text-[14px] leading-[18px]'}>We will use this to personalize your plan</p>
                 <div className="flex justify-between items-center h-full">
                     {options.map((option) => (
                         <button
                             key={option.value}
                             onClick={() => onStart(option.value)}
-                            className={'border-purple rounded-[8px] border-[2px] h-[200px] w-[162px] ' +
+                            className={'border-purple-dark rounded-[10px] border-[2px] h-[200px] w-[162px] ' +
                                 'overflow-hidden flex flex-col'}
                         >
                             <div className={'h-full w-full relative'}>
@@ -38,8 +38,8 @@ const Landing = ({onStart}: LandingProps): JSX.Element => {
                                     style={{ objectFit: 'cover' }}
                                 />
                             </div>
-                            <span className={'flex bg-purple text-md text-white w-full h-[60px] justify-center ' +
-                                'items-center font-semibold'}>
+                            <span className={'flex bg-purple-dark text-md text-white w-full py-[19px] justify-center ' +
+                                'items-center font-semibold leading-[22px]'}>
                                 {option.title}
                             </span>
                         </button>

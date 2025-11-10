@@ -20,7 +20,7 @@ const Quiz = ({stepInfo, selectedValue, onNext}: QuizProps): JSX.Element => {
                             text={option.text}
                             color={option.color}
                             selected={selectedValue === option.value}
-                            icon={{name: option.icon, size: 20, color: "inherit"}}
+                            icon={{name: option.icon, size: option.icon_size ?? 24, color: "inherit"}}
                             onClick={() => onNext(option.value)}
                         />
                     ))

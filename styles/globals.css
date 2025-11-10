@@ -11,6 +11,7 @@
     --color-background: var(--background);
     --color-foreground: var(--foreground);
     --color-yellow: #FFC633;
+    --color-purple-dark: #5349DB;
     --color-purple: #6A61F1;
     --color-purple-light: #767AF9;
     --font-figtree: "Figtree", sans-serif;
@@ -27,14 +28,14 @@ body {
 }
 
 .wrapper {
-    @apply w-full flex flex-col min-h-fit h-[100dvh] pb-[20px];
+    @apply w-full flex flex-col min-h-[100dvh] pb-[20px];
 }
 
-.wrapper > .container {
-    @apply h-full;
+.wrapper > .container  {
+    @apply flex-1 flex flex-col;
 }
 
-.container {
+.container  {
     @apply mx-auto px-side;
     max-width: var(--container-max);
 }
@@ -44,5 +45,5 @@ h1, h2 {
 }
 
 .result-tag {
-    @apply rounded-[4px] px-[12px] py-[4px] bg-white text-[14px] font-semibold absolute bottom-[10px];
+    @apply rounded-[4px] px-[12px] py-[4px] bg-white text-[14px] leading-[18px] font-semibold absolute bottom-[10px];
 }

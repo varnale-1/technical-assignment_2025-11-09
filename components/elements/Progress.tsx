@@ -14,7 +14,7 @@ const Progress = ({step, maxStep, color, className}: ProgressProps) => {
         <div className={clsx('container h-[3px]', className)}>
             <div className={'w-full h-full bg-[#E4E4E4] rounded-full overflow-hidden'}>
                 <div
-                    className={'h-full bg-purple rounded-full transition-all duration-300'}
+                    className={'h-full bg-purple-light rounded-full transition-all duration-300'}
                     style={{ width: `${progress}%`, backgroundColor: color }}
                 />
             </div>
