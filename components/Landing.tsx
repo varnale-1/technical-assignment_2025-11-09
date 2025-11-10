@@ -35,7 +35,7 @@ const Landing = ({onStart}: LandingProps): JSX.Element => {
                                     src={option.img}
                                     alt={option.title}
                                     fill
-                                    objectFit={'cover'}
+                                    style={{ objectFit: 'cover' }}
                                 />
                             </div>
                             <span className={'flex bg-purple text-md text-white w-full h-[60px] justify-center ' +

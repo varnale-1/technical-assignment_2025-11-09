@@ -41,7 +41,7 @@ const Checkout = ({gender}: CheckoutProps): JSX.Element => {
                                     src={gender === 1 ? '/images/results/male/before.png' : '/images/results/female/before.png'}
                                     alt={'Before image'}
                                     fill
-                                    objectFit={'cover'}
+                                    style={{ objectFit: 'cover' }}
                                 />
                                 <div className={'result-tag opacity-60 left-[10px]'}>Before</div>
                             </div>
@@ -50,7 +50,7 @@ const Checkout = ({gender}: CheckoutProps): JSX.Element => {
                                     src={gender === 1 ? '/images/results/male/after.png' : '/images/results/female/after.png'}
                                     alt={'After image'}
                                     fill
-                                    objectFit={'cover'}
+                                    style={{ objectFit: 'cover' }}
                                 />
                                 <div className={'result-tag right-[10px]'}>After</div>
                             </div>
