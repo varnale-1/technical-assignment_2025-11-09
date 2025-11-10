@@ -11,7 +11,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ```bash
 git clone https://github.com/varnale-1/technical-assignment_2025-11-09.git
-cd <project-folder>
+cd technical-assignment_2025-11-09
 ```
 ```bash
 npm install
