@@ -1,3 +1,5 @@
+"use client";
+
 import React, {JSX, useEffect, useState} from "react";
 import Image from 'next/image'
 import Icon from "@/components/elements/Icon";

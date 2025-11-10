@@ -1,3 +1,5 @@
+"use client";
+
 import {JSX} from "react";
 import Icon from "@/components/elements/Icon";
 import Progress from "@/components/elements/Progress";

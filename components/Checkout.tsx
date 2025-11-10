@@ -1,3 +1,5 @@
+"use client";
+
 import {JSX} from "react";
 import Icon from "@/components/elements/Icon";
 import Image from "next/image";

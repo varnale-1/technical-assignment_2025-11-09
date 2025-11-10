@@ -1,6 +1,4 @@
-"use client";
-
-import {JSX, useEffect, useState} from "react";
+import { useEffect, useState, JSX } from "react";
 import clsx from "clsx";
 
 interface IconProps {
@@ -29,19 +27,16 @@ const Icon = ({
 
     return (
         <span
-            className={clsx(
-                'flex justify-center items-center',
-                className
-            )}
+            className={clsx("flex justify-center items-center", className)}
             style={{
                 width: "auto",
                 height: size,
                 color: color,
-                aspectRatio: '1'
+                aspectRatio: "1",
             }}
-            dangerouslySetInnerHTML={{__html: svgContent}}
+            dangerouslySetInnerHTML={{ __html: svgContent }}
         />
     );
-}
+};
 
 export default Icon;

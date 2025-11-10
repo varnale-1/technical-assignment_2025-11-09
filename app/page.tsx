@@ -1,4 +1,5 @@
 "use client";
+
 import {useState, useEffect, JSX} from "react";
 import Landing from "@/components/Landing";
 import Quiz from "@/components/Quiz";
