@@ -12,7 +12,7 @@ const Quiz = ({stepInfo, selectedValue, onNext}: QuizProps): JSX.Element => {
     return (
         <div className={'container mt-[12px] h-full flex flex-col flex-1'}>
             <h1>{stepInfo?.title}</h1>
-            <div className={'flex flex-col space-y-[8px] h-full justify-end'}>
+            <div className={'flex flex-col space-y-[8px] h-full justify-end flex-1'}>
                 {
                     stepInfo?.options?.map(option => (
                         <Button
