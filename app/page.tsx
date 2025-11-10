@@ -67,7 +67,7 @@ export default function Home(): JSX.Element | null {
             )}
 
             {stepIndex > finalStep && (
-                <Checkout/>
+                <Checkout gender={gender}/>
             )}
         </div>
     );

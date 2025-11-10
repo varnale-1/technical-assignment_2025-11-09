@@ -79,7 +79,9 @@ const Header = ({
             </div>
             {
                 showQuiz &&
-                <Progress maxStep={maxSteps} step={currentStep} />
+                <div className={'mt-[13px]'}>
+                    <Progress maxStep={maxSteps} step={currentStep} />
+                </div>
             }
         </div>
     )

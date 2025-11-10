@@ -27,7 +27,7 @@ body {
 }
 
 .wrapper {
-    @apply w-full flex flex-col h-[100dvh] pb-[20px];
+    @apply w-full flex flex-col min-h-fit h-[100dvh] pb-[20px];
 }
 
 .wrapper > .container {
@@ -39,6 +39,10 @@ body {
     max-width: var(--container-max);
 }
 
-h1 {
+h1, h2 {
     @apply font-semibold text-lg leading-[28px] text-center;
+}
+
+.result-tag {
+    @apply rounded-[4px] px-[12px] py-[4px] bg-white text-[14px] font-semibold absolute bottom-[10px];
 }
